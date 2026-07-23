@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Psy v Dolnom Kubíne — koľko ich je, čo platíme a ako to riešiť</title>
+<meta name="description" content="Koľko psov žije v Dolnom Kubíne, koľko mesto vyberie na dani za psa, história psích výbehov a moderné eko riešenia psích záchodov." />
+<meta property="og:title" content="Psy v Dolnom Kubíne — dáta, história a riešenia" />
+<meta property="og:description" content="817 psov, 13 430 € na dani, výbehy už od roku 2008 a moderné eko psie záchody. Kompletný prehľad." />
+<meta property="og:type" content="article" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐕</text></svg>" />
+<style>
+  :root {
+    --bg: #faf7f2;
+    --surface: #ffffff;
+    --ink: #23201b;
+    --muted: #6b6459;
+    --line: #e7e0d4;
+    --accent: #b45a26;
+    --accent-soft: #f4e6d8;
+    --shadow: 0 1px 3px rgba(60,45,25,.06), 0 8px 24px rgba(60,45,25,.06);
+    --radius: 16px;
+    --maxw: 760px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17150f;
+      --surface: #201d15;
+      --ink: #ece6da;
+      --muted: #a89f8f;
+      --line: #34301f;
+      --accent: #e08a4e;
+      --accent-soft: #2c2416;
+      --shadow: 0 1px 3px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
+  header.hero {
+    background: linear-gradient(160deg, var(--accent-soft), transparent 70%);
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .kicker {
+    display: inline-block;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    line-height: 1.12;
+    margin: 0 0 16px;
+    letter-spacing: -.02em;
+  }
+  .lede { font-size: 1.18rem; color: var(--muted); margin: 0; max-width: 46ch; }
+  .meta { margin-top: 22px; font-size: .9rem; color: var(--muted); }
+
+  main { padding: 8px 0 40px; }
+  section { padding: 34px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+    margin: 0 0 6px;
+    letter-spacing: -.01em;
+  }
+  h2 .emoji { margin-right: .4rem; }
+  h3 { font-size: 1.1rem; margin: 26px 0 8px; }
+  p { margin: 12px 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Stat cards */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 8px; }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    box-shadow: var(--shadow);
+  }
+  .stat .num { font-size: 1.9rem; font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -.02em; }
+  .stat .lab { font-size: .82rem; color: var(--muted); margin-top: 6px; }
+  @media (max-width: 560px) { .stats { grid-template-columns: 1fr; } }
+
+  /* Tables */
+  .tablewrap { overflow-x: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; background: var(--surface); }
+  th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  thead th { background: var(--accent-soft); color: var(--ink); font-weight: 700; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr.highlight td { background: var(--accent-soft); font-weight: 700; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* Callout */
+  .callout {
+    background: var(--surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 22px 0;
+    box-shadow: var(--shadow);
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* Solution cards */
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+  @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+  }
+  .card h3 { margin-top: 0; }
+  .card ul { margin: 10px 0 0; padding-left: 18px; }
+  .card li { margin: 6px 0; }
+  .tag { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 999px; margin-bottom: 8px; }
+
+  ul.areas { list-style: none; padding: 0; margin: 18px 0; }
+  ul.areas li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 8px 0; box-shadow: var(--shadow); }
+  ul.areas li strong { color: var(--accent); }
+  .area-size { float: right; color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+  /* Footer */
+  footer { padding: 30px 0 50px; color: var(--muted); font-size: .88rem; }
+  footer h2 { font-size: 1.05rem; color: var(--ink); }
+  footer ol { padding-left: 20px; }
+  footer li { margin: 6px 0; }
+  .disclaimer { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); font-size: .82rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">🐾 Dolný Kubín</span>
+    <h1>Psy v Dolnom Kubíne: koľko ich je, čo za ne platíme a ako to riešiť</h1>
+    <p class="lede">Koľko štvornohých obyvateľov máme v meste, koľko vyberie mesto na dani za psa, kde sa venčí už od roku 2008 — a aké moderné eko riešenia existujú.</p>
+    <div class="meta">Prehľad na základe oficiálnych dokumentov mesta Dolný Kubín</div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- 1. DATA -->
+    <section id="cisla">
+      <h2><span class="emoji">📊</span>Koľko psov žije v Dolnom Kubíne?</h2>
+      <p>Zamysleli ste sa niekedy, koľko psov máme v našom meste? Odpoveď je priamo v oficiálnom <strong>Záverečnom účte mesta Dolný Kubín za rok 2024</strong>.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="num">817</div><div class="lab">prihlásených psov (2024)</div></div>
+        <div class="stat"><div class="num">13 431 €</div><div class="lab">vybraté na dani za psa</div></div>
+        <div class="stat"><div class="num">111,9 %</div><div class="lab">plnenie rozpočtu</div></div>
+      </div>
+
+      <p>Zaujímavé je, že počet psov je roky prekvapivo stabilný — dokonca mierne klesá. Pozrite si vývoj za posledné roky:</p>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Rok</th><th class="num">Vybraté na dani</th><th class="num">Počet psov</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2020</td><td class="num">13 748,10 €</td><td class="num">870</td></tr>
+            <tr><td>2021</td><td class="num">13 695,52 €</td><td class="num">898</td></tr>
+            <tr><td>2022</td><td class="num">14 729,66 €</td><td class="num">891</td></tr>
+            <tr><td>2023</td><td class="num">14 280,92 €</td><td class="num">852</td></tr>
+            <tr class="highlight"><td>2024</td><td class="num">13 430,69 €</td><td class="num">817</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2. SADZBY -->
+    <section id="sadzby">
+      <h2><span class="emoji">💶</span>Koľko sa platí za psa?</h2>
+      <p>Sadzba dane závisí od toho, kde psa chováte. Takto vyzerali sadzby v roku 2024:</p>
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr><th>Kde je pes chovaný</th><th class="num">Ročná sadzba</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pri rodinnom dome</td><td class="num">8,40 €</td></tr>
+            <tr><td>V bytovom dome (iná výstavba)</td><td class="num">39,60 €</td></tr>
+            <tr><td>V koterci</td><td class="num">13,20 €</td></tr>
+            <tr><td>Na stráženie — právnická osoba</td><td class="num">49,50 €</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Peniaze z dane za psa slúžia okrem iného na čistenie verejných priestranstiev, koše na exkrementy a údržbu plôch na venčenie.</p>
+    </section>
+
+    <!-- 3. HISTORIA / VYBEHY -->
+    <section id="vybehy">
+      <h2><span class="emoji">🏞️</span>Kde sa psy venčia? Kubín to rieši systémovo už dávno</h2>
+      <p>Málokto vie, že mesto malo vyhradené plochy pre psov už pred viac ako 15 rokmi. <strong>Kronika mesta za rok 2008</strong> (autorka PhDr. Soňa Maťugová) uvádza, že vtedy bolo v meste <strong>808 chovateľov psov</strong> a všeobecne záväzné nariadenie (<strong>VZN č. 3/2009</strong>, novela 9/2013) im vyčlenilo štyri priestory v mestských častiach — vždy pod dozorom majiteľa. Spolu ide o <strong>13 000 m²</strong> plôch:</p>
+
+      <ul class="areas">
+        <li><span class="area-size">~4 000 m²</span><strong>Bysterec</strong> — medzi železničnou traťou a plotom Cirkevnej ZŠ A. Radlinského</li>
+        <li><span class="area-size">4 000 m²</span><strong>Brezovec</strong> — verejné priestranstvo od Ul. Nemocničnej k obchvatu štátnej cesty</li>
+        <li><span class="area-size">3 000 m²</span><strong>Banisko</strong> — od bývalej kotolne ponad ul. Chočskú</li>
+        <li><span class="area-size">2 000 m²</span><strong>Staré mesto</strong> — od visutej lavice pri ihrisku s umelou trávou k potoku pri penzióne Koliba</li>
+      </ul>
+
+      <div class="callout">„Miesta boli označené aj tabuľkami a zabezpečené košmi pre psie exkrementy." — Kronika mesta Dolný Kubín 2008</div>
+
+      <p>Tieto štyri plochy sú platné dodnes — mesto odvtedy nové oficiálne výbehy nepridalo. Zároveň platí <strong>zákaz vodenia psov</strong> do priestoru Letného štadióna a na atletickú dráhu.</p>
+
+      <p>Podľa správ mestskej polície sú dlhodobo najproblémovejšími lokalitami z hľadiska neodstránených exkrementov <strong>Brezovec</strong> (najmä ul. Ľ. Štúra pri nájomných bytovkách), <strong>Banisko</strong> (pri garážach), <strong>Kňažia</strong> a <strong>Záskalie</strong>.</p>
+
+      <p>Za 16 rokov sa počet psov takmer nezmenil (808 v roku 2008 → 817 v roku 2024). Otázka je, či dnešná sieť štyroch výbehov a košov na sáčky stále postačuje — a či by nepomohli modernejšie riešenia.</p>
+    </section>
+
+    <!-- 4. EKO RIESENIA -->
+    <section id="riesenia">
+      <h2><span class="emoji">♻️</span>Moderné eko riešenia: psie záchody</h2>
+      <p>V mnohých mestách sa dnes okrem klasických výbehov osádzajú aj <strong>psie záchody</strong> — vyhradené miesta, kam pes vykoná potrebu a ktoré sa dajú ľahko udržiavať. Existujú dva hlavné typy:</p>
+
+      <div class="cards">
+        <div class="card">
+          <span class="tag">Feromónová stanica</span>
+          <h3>ECO DOG toilet</h3>
+          <p>Patentované zariadenie, ktoré feromónmi priťahuje psa na určené miesto. Absorpčná a filtračná náplň pohlcuje zápach, likviduje patogény a odvádza vodu.</p>
+          <ul>
+            <li>ochranný kôš + zásobník na vrecká</li>
+            <li>držiak vôdzky, stĺp a informačný panel</li>
+            <li>vhodné do miest aj verejných priestorov</li>
+            <li>domáce verzie od 149 € do 499 €</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="tag">Piesková ohrádka</span>
+          <h3>Klasický psí záchod</h3>
+          <p>Jednoduché a lacné riešenie bežné v ČR aj rakúskych mestách (tzv. <em>Hundetoilette</em>) — ohradený priestor vyplnený pieskom alebo štrkom.</p>
+          <ul>
+            <li>nízke náklady, ľahká údržba</li>
+            <li>pri vstupe zásobník na sáčky + kôš</li>
+            <li>piesok sa pravidelne prehrabáva/mení</li>
+            <li>psy treba naň postupne navyknúť</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Kombinácia vyhradených výbehov, dostatku košov na sáčky a niekoľkých psích záchodov na frekventovaných miestach by mohla výrazne zlepšiť čistotu sídlisk — v prospech psíčkarov aj tých, čo psa nemajú.</p>
+    </section>
+
+    <!-- CTA -->
+    <section id="diskusia">
+      <h2><span class="emoji">💬</span>A ako to vnímate vy?</h2>
+      <p>Máme dnes v Dolnom Kubíne dostatok výbehov a košov na sáčky tam, kde treba? Kde vo vašej štvrti chýbajú? A privítali by ste moderné psie záchody? Napíšte nám svoj názor.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Zdroje</h2>
+    <ol>
+      <li><a href="https://www.dolnykubin.sk/download_file_f.php?id=2225323" target="_blank" rel="noopener">Záverečný účet mesta Dolný Kubín za rok 2024 (PDF)</a></li>
+      <li><a href="https://www.dolnykubin.sk/download_file_f.php?id=298189" target="_blank" rel="noopener">Kronika mesta Dolný Kubín 2008 (PDF)</a></li>
+      <li><a href="https://www.dolnykubin.sk/financovanie.html" target="_blank" rel="noopener">Financovanie — Mesto Dolný Kubín</a></li>
+      <li>VZN č. 3/2009 v znení VZN č. 9/2013 o držaní a vodení psov v meste Dolný Kubín</li>
+      <li><a href="https://www.dolnykubin.sk/download_file_f.php?id=957924" target="_blank" rel="noopener">Správa Mestskej polície Dolný Kubín 2017 (PDF)</a></li>
+      <li><a href="https://ecodogtoilet.com/" target="_blank" rel="noopener">ECO DOG toilet — hygienické zariadenie na venčenie psov</a></li>
+    </ol>
+    <p class="disclaimer">Táto stránka je nezávislý informačný prehľad vytvorený z verejne dostupných dokumentov mesta Dolný Kubín. Nejde o oficiálnu stránku mesta. Údaje sú platné k roku 2024.</p>
+  </div>
+</footer>
+
+</body>
+</html>
